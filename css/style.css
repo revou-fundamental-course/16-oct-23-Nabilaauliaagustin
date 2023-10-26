@@ -1,3 +1,30 @@
+@media screen and (max-width: 768px){
+    #header {
+        flex-direction: column;
+    }
+
+    .nav {
+        display: none;
+        width: 95%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    body {
+        width: auto;
+    }
+
+    .greetings h1 p {
+        font-size: auto;
+        align-content: auto;
+    }
+}
+
 body{
     background-color: #eeecf3;
 }
@@ -23,7 +50,6 @@ body{
 }
 
 #wrapper .icon span {
-    display: block;
     height: 20px;
     width: 20px;
     border-radius: 50%;
@@ -35,6 +61,7 @@ body{
 
 #wrapper .icon span i {
     line-height:2.5px;
+    color: black;
 }
 
 #wrapper .icon .tooltip {
@@ -92,6 +119,11 @@ body{
     margin-bottom: px;
 }
 
+.menu-icon {
+    font-size: 24px;
+    display: none;
+}
+
 .nav-item {
     padding: 2px 1em;
     border: 0.5px solid #000;
@@ -112,13 +144,16 @@ body{
     padding-left: 5em;
 }
 
-.banner{
+#banner{
     //background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-size: cover;
     height: 400px;
     font-family: poppins;
-    position: relative;
     margin-left: 5px;
+    align-items: center;
 }
 
 #name {
@@ -162,6 +197,10 @@ body{
     font-size: small;
 }
 
-.profile  {
-    margin
+#profile  {
+    border-top: 1px solid;
+}
+
+.container .form-left .form-right {
+    display: flex;
 }
