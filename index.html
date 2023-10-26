@@ -12,8 +12,6 @@
 </head>
 
 <body>
-
-    <section class="top" id="top">
         <header class="header" id="header">
             <nav class="nav-logo">
                 <img src="/assets/nanalogo.png" alt="nana logo">
@@ -27,13 +25,13 @@
             </nav>
         </header>
 
-        <section class="banner" id="banner">
+        <div class="banner" id="banner">
             <div class="greetings">
                 <p>Hi! <button id="tombol"><span id="name">There!</span></button></p>
                 <h1>My name is <span style="color: gray;">Nana</span></h1>
                 <p class="bio" id="bio"><b>Welcome!</b> to my Portofolio</p>
             </div>
-        </section>
+        </div>
 
         <div class="wrapper" id="wrapper">
             <div class="icon">
@@ -50,7 +48,6 @@
             </div>
                 
         </div>
-    </section>
 
     <!-- <section class="profile" id="profile">
         <div class="profile">
@@ -60,7 +57,7 @@
         </div>
     </section> -->
 
-    <section class="headquarters">
+    <div class="headquarters" id="headquarters">
         <h1>Our Headquarters</h1>
         <div class="hq-items">
 
@@ -76,43 +73,23 @@
 
             </div>
         </div>
-    </section>
+    </div>
 
-    <div class="container">
-        <h1>Message Us</h1>
+    <div class="container" id="message-us">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>Contact Us</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
 
-        <div class="form-left">
-            <form name="massage-form" onsubmit="return validateForm()">
-                Nama: <input placeholder="Nama" type="text" name="full-name" />
-                <br />
+            <input type="Email" id="email" placeholder="Email" required>
+            
+            <input type="text" id="phone" placeholder="Phone No" required>
+            
+            <textarea id="messages" rows="4" placeholder="Messages">
+            </textarea>
+            
 
-                Tanggal Lahir:
-                <input type="date" name="birth-date" />
-                <br />
-
-                Jenis Kelamin:
-                <input type="radio" id="Perempuan" name="fav_language" value="Perempuan">
-                <label for="Sudah">Perempuan</label>
-
-                <input type="radio" id="Laki-Laki" name="fav_language" value="Laki-Laki">
-                <label for="belum">Laki-Laki</label><br>
-                <br />
-
-                Pesan:
-                <textarea placeholder="Pesan" name="Messages" rows="3"></textarea>
-                <br />
-
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
-
-
-        <div class="form-right">
-            <p>Nama: <span id="sender-full-name"></span> </p>
-            <p>Tanggal Lahir: <span id="sender-birth-date"></span> </p>
-            <p>Jenis Kelamin: <span id="sender-gender"></span> </p>
-            <p>Pesan: <span id="sender-messages"></span> </p>
-        </div>
+            <input type="submit"></button>
+        </form>
     </div>
 
     <footer class="footer">
@@ -122,6 +99,23 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "nabilaauliaagustin123@gmail.com",
+                Password : "9A2AE2A40BF6FF0D3B5C3A6A73162C8E32E1",
+                To : "auliajjk97@gmail.com",
+                From : document.getElementById("email").value,
+                Subject : "New Contact From Enquiry",
+                Body : "And this is the body"
+            }).then(
+              message => alert(message)
+            );
+        }
+    </script>
 </body>
 
 </html>
